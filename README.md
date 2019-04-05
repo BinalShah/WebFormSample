@@ -1,5 +1,5 @@
 # WebFormSample
-WebForm applicaiton with store proc
+WebForm applicaiton with store proc.
 Run attached sql script first. change the connection string in  Default.aspx.cs and About.aspx.cs files.
 
 
