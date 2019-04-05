@@ -1,0 +1,40 @@
+Create Database Called: StudentData
+Create Table Called: Student:
+
+      USE [StudentData]
+GO
+
+/****** Object:  Table [dbo].[Student]    Script Date: 4/5/2019 11:23:46 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Student](
+	[StudentID] [INT] NOT NULL,
+	[FirstName] [VARCHAR](250) NULL,
+	[LastName] [VARCHAR](250) NULL,
+	[Grade] [VARCHAR](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[StudentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+Craete Store Procedure called submitrecord:
+      
+      CREATE OR ALTER PROCEDURE submitrecord
+	@ID INT,
+	@FirstName varchar(200),
+	@LastName varchar(10),
+	@Grade varchar(10)
+	
+	AS
+	begin
+    INSERT INTO Student (StudentID,FirstName,LastName,Grade)
+	VALUES(@ID,@FirstName,@LastName,@Grade)
+	END
+    
